@@ -8,7 +8,9 @@ RUN apt-get update; \
       chromium-browser \
       libgtk2.0-0
 
-RUN wget https://cdndl.otohits.net/dl/OtohitsApp_5055_linux_portable.tar.gz \
+RUN mkdir Otohits \
+    && cd Otohits \
+    && wget https://cdndl.otohits.net/dl/OtohitsApp_5055_linux_portable.tar.gz \
     && tar -xzf OtohitsApp_5055_linux_portable.tar.gz \
     && rm OtohitsApp_5055_linux_portable.tar.gz 
 
