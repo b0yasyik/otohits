@@ -1,5 +1,6 @@
 FROM ubuntu:18.04 
 
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update; \
     apt-get install -y \
@@ -12,12 +13,15 @@ RUN wget https://cdndl.otohits.net/dl/OtohitsApp_5055_linux_portable.tar.gz \
     && tar -xzf OtohitsApp_5055_linux_portable.tar.gz \
     && rm OtohitsApp_5055_linux_portable.tar.gz \
     && groupadd -r otohits \
-    && useradd --no-log-init -r -g otohits otohits \
-    && usermod -aG sudo otohits
+    && useradd -rm -g otohits otohits \
+    && echo 'pcm.!default {\n\
+    type plug\n\
+    slave.pcm "null"\n\
+}' > /etc/asound.conf
 
 USER otohits
 
-COPY . .
+COPY run.sh /run.sh
 
 
-ENTRYPOINT ["sh", "/run.sh"]
+ENTRYPOINT ["/run.sh"]
