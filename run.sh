@@ -19,7 +19,6 @@ while [[ ! $(pidof otohits-app) ]]; do
         echo "Restarting...."
         killall otohits-app otohits-viewer chromium-browser chrome-sandbox
         ./Otohits/otohits-app
-        exit
         echo "Restarted...."
         sleep 120
 done
