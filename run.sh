@@ -7,11 +7,19 @@ cat > $file <<EOFSS
 /nosandbox
 EOFSS
 
-
+echo "==========================="
 echo "Creating Virtual Display..."
+echo "==========================="
+echo " "
 Xvfb :51 & export DISPLAY=:51
+echo "=========================="
 echo "Virtual display created :)"
+echo "=========================="
+echo " "
+echo "Starting the Viewer..."
+echo " "
 ./Otohits/otohits-app &
+sleep 3
 
 while [ 1 != 0 ]
 do
