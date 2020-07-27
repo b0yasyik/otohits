@@ -6,7 +6,8 @@ RUN apt-get update; \
       wget \
       xvfb \
       chromium-browser \
-      libgtk2.0-0
+      libgtk2.0-0 \
+      psmisc
 
 RUN mkdir Otohits \
     && cd Otohits \
