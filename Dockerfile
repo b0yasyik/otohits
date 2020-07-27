@@ -11,8 +11,8 @@ RUN apt-get update; \
 RUN mkdir Otohits \
     && cd Otohits \
     && wget https://www.otohits.net/dl/OtohitsApp_5058_linux_portable.tar.gz \
-    && tar -xzf OtohitsApp_5055_linux_portable.tar.gz \
-    && rm OtohitsApp_5055_linux_portable.tar.gz 
+    && tar -xzf OtohitsApp_5058_linux_portable.tar.gz \
+    && rm OtohitsApp_5058_linux_portable.tar.gz 
 
 COPY run.sh /run.sh
 
