@@ -1,4 +1,4 @@
-# Otohits Viewer
+# Otohits Viewer for Docker
 
 ## Run Otohits Docker Viewer session by this single one line command
 
