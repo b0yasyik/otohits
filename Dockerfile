@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 
-
 RUN apt-get update; \
     apt-get install -y \
       ca-certificates \
@@ -10,12 +9,12 @@ RUN apt-get update; \
       libgtk2.0-0 \
       psmisc 
 
-RUN mkdir Otohits \
-    && cd Otohits \
-    && wget https://www.otohits.net/app/linux/latest --no-check-certificate \
+WORKDIR /Otohits
+
+RUN wget https://www.otohits.net/app/linux/latest --no-check-certificate \
     && tar -xzf latest \
     && rm latest 
 
-COPY run.sh /run.sh
+COPY run.sh /Otohits
 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["/Otohits/run.sh"]
