@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-file="Otohits/otohits.ini"
+file="otohits.ini"
 cat > $file <<EOFSS
 /login:$APPLICATION_KEY
 /nosandbox
@@ -18,7 +18,7 @@ echo "=========================="
 echo " "
 echo "Starting the Viewer..."
 echo " "
-./Otohits/otohits-app &
+./otohits-app &
 sleep 3
 
 while [ 1 != 0 ]
@@ -26,7 +26,7 @@ do
 while [[ ! $(pidof otohits-app) ]]; do
         echo "Restarting...."
         killall otohits-app otohits-viewer chromium-browser chrome-sandbox
-        ./Otohits/otohits-app
+        ./otohits-app
         echo "Restarted...."
         sleep 120
 done
