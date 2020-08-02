@@ -1,10 +1,15 @@
 #!/bin/bash
-
+echo "==================================="
+echo "Welcome to Otohits Docker Viewer :)"
+echo "==================================="
+echo " "
+read -p 'Enter Your Application Key: ' APPLICATION_KEY
 
 file="otohits.ini"
 cat > $file <<EOFSS
 /login:$APPLICATION_KEY
 /nosandbox
+/autoupdate
 EOFSS
 
 echo "==========================="
