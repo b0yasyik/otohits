@@ -12,10 +12,13 @@ cat > $file <<EOFSS
 /autoupdate
 EOFSS
 
+sleep 1
+
 echo "==========================="
 echo "Creating Virtual Display..."
 echo "==========================="
 echo " "
+sleep 2
 Xvfb :51 & export DISPLAY=:51
 echo "=========================="
 echo "Virtual display created :)"
