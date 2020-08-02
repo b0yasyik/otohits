@@ -1,9 +1,5 @@
 #!/bin/bash
-echo "==================================="
-echo "Welcome to Otohits Docker Viewer :)"
-echo "==================================="
-echo " "
-read -p 'Enter Your Application Key: ' APPLICATION_KEY
+
 
 file="otohits.ini"
 cat > $file <<EOFSS
@@ -18,8 +14,8 @@ echo "==========================="
 echo "Creating Virtual Display..."
 echo "==========================="
 echo " "
-sleep 2
 Xvfb :51 & export DISPLAY=:51
+sleep 2
 echo "=========================="
 echo "Virtual display created :)"
 echo "=========================="
