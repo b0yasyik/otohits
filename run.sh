@@ -1,12 +1,21 @@
 #!/bin/bash
 
 
-file="otohits.ini"
-cat > $file <<EOFSS
-/login:$APPLICATION_KEY
-/nosandbox
-/autoupdate
-EOFSS
+echo "/login:$APPLICATION_KEY
+/nosandbox" > otohits.ini
+
+if [ $AUTOUPDATE == "true" ]; then
+    echo "/autoupdate" >> otohits.ini
+else
+    echo "========================="
+    echo "AutoUpdate is Disabled :("
+
+
+if [ $BETA == "true" ]; then
+    echo "/beta" >> otohits.ini
+else
+    echo "Beta Version is Disabled :("
+fi
 
 sleep 1
 
