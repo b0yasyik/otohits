@@ -9,7 +9,7 @@ if [ $AUTOUPDATE == "true" ]; then
 else
     echo "========================="
     echo "AutoUpdate is Disabled :("
-
+fi
 
 if [ $BETA == "true" ]; then
     echo "/beta" >> otohits.ini
